@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Frase from './components/Frase'
 import './App.css'
 import styled from '@emotion/styled';
@@ -27,10 +27,21 @@ function App() {
   const [frase , guardarFrase] = useState({quote: '', author: ''});
 
   const consultarAPI = async () => {
-    const api = await fetch('https://api.breakingbadquotes.xyz/v1/quotes');
-    const frase = await api.json();
-    guardarFrase(frase[0]);
+    try {
+      const api = await fetch('https://api.breakingbadquotes.xyz/v1/quotes');
+      const data = await api.json();
+
+      if (data && data.length > 0) {
+        guardarFrase(data[0]);
+      }
+    }catch (error) {
+      console.error("Error al obtener la frase:", error);
+    }
   }
+
+  useEffect(() => {
+    consultarAPI();
+  },[])
 
   return (
     <Contenedor>
