@@ -22,7 +22,9 @@ border: 2px solid black;
 function App() {
 
   const consultarAPI = () => {
-    console.log('consultando...');
+    const api = fetch('https://api.breakingbadquotes.xyz/v1/quotes');
+    const frase = api.then(respuesta => respuesta.json());
+    frase.then(resultado => console.log(resultado));
   }
 
   return (
