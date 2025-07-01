@@ -1,69 +1,65 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Acerca del Proyecto
 
-Currently, two official plugins are available:
+Este es un **cliente web** desarrollado en React que interactúa con una API externa para mostrar frases aleatorias de la popular serie Breaking Bad. La aplicación carga una frase por defecto al iniciar y permite al usuario obtener una nueva frase con cada clic en un botón.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Portada de la aplicación](public/cover.png)
+-----
 
-## Expanding the ESLint configuration
+## 🚀 Tecnologías
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+  * **React**: Librería de JavaScript para construir interfaces de usuario interactivas.
+  * **TypeScript**: Un superconjunto tipado de JavaScript que mejora la calidad y mantenibilidad del código.
+  * **Tailwind CSS**: Un framework CSS de bajo nivel que facilita el diseño rápido y responsivo.
+  * **Vite**: Una herramienta de construcción rápida para proyectos web modernos, utilizada para el entorno de desarrollo.
+  * **NPM**: Gestor de paquetes de Node.js, utilizado para la gestión de dependencias del proyecto.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+-----
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## ⚙️ Instalación y Uso
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Sigue estos pasos para ejecutar el proyecto en tu máquina local.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Prerrequisitos
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Asegúrate de tener instalado:
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+  * **Node.js** (versión 14 o superior recomendada)
+  * **NPM** (viene incluido con Node.js)
+
+### Pasos
+
+1.  **Clona el repositorio** de GitHub:
+    ```bash
+    git clone https://github.com/kevincisnero01/citas-breakingbad-client-react.git
+    ```
+2.  **Navega** al directorio del proyecto:
+    ```bash
+    cd citas-breakingbad-client-react
+    ```
+3.  **Instala las dependencias** del proyecto:
+    ```bash
+    npm install
+    ```
+4.  **Inicia el servidor de desarrollo**:
+    ```bash
+    npm run dev
+    ```
+    La aplicación se abrirá automáticamente en tu navegador predeterminado, usualmente en `http://localhost:5173/` (o un puerto similar).
+
+-----
+
+## 🎯 Funcionalidades Clave
+
+  * **Consulta API**: Realiza peticiones a una API externa para obtener frases de Breaking Bad.
+  * **Carga por defecto**: Muestra una frase automáticamente al cargar la aplicación.
+  * **Refresco Dinámico**: Actualiza la frase mostrada cada vez que el usuario presiona el botón.
+
+-----
+
+## 🔗 API Consumida
+
+Este proyecto consume frases de la siguiente API:
+
+  * **URL Base**: `https://api.breakingbadquotes.xyz`
+
